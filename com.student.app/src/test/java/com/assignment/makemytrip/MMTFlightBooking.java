@@ -40,8 +40,8 @@ public class MMTFlightBooking {
 	@AfterTest
 	public void teardown(){
 
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 	}
 
 	@Test
@@ -145,14 +145,14 @@ public class MMTFlightBooking {
 			//Question -03- email validation
 			//bool isValidEmail(string emailId)
 
-			Boolean validemail=utility.isValidEmail(driver, "afsar123@");
+			Boolean validemail=utility.isValidEmail(driver, "afsar123@gmail.com");
 
 			if(validemail){
 
-				Assert.assertTrue("Email is valid ", true);
+				Assert.assertTrue("Email is invalid ", false);
 			}else{
 
-				Assert.assertTrue("Email is Not Valid ", false);
+				Assert.assertTrue("Email is Valid ", true);
 			}
 		} catch (Exception e) {
 
