@@ -75,7 +75,8 @@ public class MMTFlightBooking {
 
 	}
 	
-	@Test
+	@Test(description=" 2.Test Cases - Write test cases for Coverfox Term Insurance page -"
+			+ "3. Test Data - Provide test data to validate an email id field.")
 	public void coverfox_Validation(){
 		
 		/**
