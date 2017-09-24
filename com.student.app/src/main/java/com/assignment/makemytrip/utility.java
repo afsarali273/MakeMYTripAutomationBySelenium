@@ -3,6 +3,8 @@
  */
 package com.assignment.makemytrip;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -122,10 +124,6 @@ public class utility {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-
-
-
 	}
 
 	/**Enter Date in format dd/mm/yyyy */
@@ -197,32 +195,50 @@ public class utility {
 	 * @return
 	 * 
 	 */
-	
+
 	public static void SearchFunctionality(WebDriver driver,String Enter_From,String Enter_To,String EnterDate,String NumberofPassenger){
-		
+
 		//Clicking on the One Way ,we can provide Multicity,Round trip etc..
-				driver.findElement(By.xpath(".//*[@id='js-switch__option']/div/label[contains(text(),'one way')]")).click();
-				WebElement From=driver.findElement(By.id("hp-widget__sfrom"));
-				From.clear();
-				From.sendKeys(Enter_From);
+		driver.findElement(By.xpath(".//*[@id='js-switch__option']/div/label[contains(text(),'one way')]")).click();
+		WebElement From=driver.findElement(By.id("hp-widget__sfrom"));
+		From.clear();
+		From.sendKeys(Enter_From);
 
-				driver.findElement(By.xpath(".//*[@id='js-filterOptins']/div/div/ul/li/div/p/span[contains(text(),'"+Enter_From+"') ]")).click();
+		driver.findElement(By.xpath(".//*[@id='js-filterOptins']/div/div/ul/li/div/p/span[contains(text(),'"+Enter_From+"') ]")).click();
 
-				WebElement To=driver.findElement(By.id("hp-widget__sTo"));
-				To.clear();
-				To.sendKeys(Enter_To);
+		WebElement To=driver.findElement(By.id("hp-widget__sTo"));
+		To.clear();
+		To.sendKeys(Enter_To);
 
-				driver.findElement(By.xpath(".//*[@class='locationFilter autocomplete_to']/ul/li/div/p/span[contains(text(),'"+Enter_To+"')]")).click();
+		driver.findElement(By.xpath(".//*[@class='locationFilter autocomplete_to']/ul/li/div/p/span[contains(text(),'"+Enter_To+"')]")).click();
 
-				utility.DateSelection(driver, EnterDate);
+		utility.DateSelection(driver, EnterDate);
 
-				driver.findElement(By.id("hp-widget__paxCounter")).click();
+		driver.findElement(By.id("hp-widget__paxCounter")).click();
 
-				utility.select_Passenger(driver,NumberofPassenger);
+		utility.select_Passenger(driver,NumberofPassenger);
 
-				driver.findElement(By.xpath(".//*[@id='js-filterOptins']/div/div[9]/div/p/a")).click();
+		driver.findElement(By.xpath(".//*[@id='js-filterOptins']/div/div[9]/div/p/a")).click();
 
-				driver.findElement(By.id("searchBtn")).click();
+		driver.findElement(By.id("searchBtn")).click();
+	}
+
+	public static Boolean isValidEmail(WebDriver driver, String Email){
+
+		Boolean flag=false;
+
+		driver.findElement(By.xpath(".//*[@id='content']/div/div[2]/span/div/div/div[1]/div[3]/div[2]/div/input")).sendKeys(Email);
+
+		driver.findElement(By.xpath(".//*[@id='content']/div/div[2]/span/div/div/div[2]/button")).click();
+
+		List<WebElement> errorPresent=driver.findElements(By.xpath(".//*[@id='content']/div/div[2]/span/div/div/div[1]/div[3]/div[2]/div/div[contains(text(),'Oh. Looks like that email is not valid. Check again?')]"));
+
+		if(!(errorPresent.size()== 0)){
+
+			flag=true;	
+		}	
+		return flag;
+
 	}
 
 
