@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="43520" started-at="2017-09-24T13:35:14Z" finished-at="2017-09-24T13:35:57Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="43520" started-at="2017-09-24T13:35:14Z" finished-at="2017-09-24T13:35:57Z">
+      <class name="com.assignment.makemytrip.MMTFlightBooking">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.assignment.makemytrip.MMTFlightBooking@146ba0ac]" name="init" is-config="true" duration-ms="6017" started-at="2017-09-24T19:05:14Z" finished-at="2017-09-24T19:05:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="FlighSearch()[pri:0, instance:com.assignment.makemytrip.MMTFlightBooking@146ba0ac]" name="FlighSearch" duration-ms="30007" started-at="2017-09-24T19:05:20Z" finished-at="2017-09-24T19:05:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FlighSearch -->
+        <test-method status="PASS" signature="coverfox_Validation()[pri:0, instance:com.assignment.makemytrip.MMTFlightBooking@146ba0ac]" name="coverfox_Validation" duration-ms="4617" started-at="2017-09-24T19:05:50Z" finished-at="2017-09-24T19:05:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- coverfox_Validation -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.assignment.makemytrip.MMTFlightBooking@146ba0ac]" name="teardown" is-config="true" duration-ms="2844" started-at="2017-09-24T19:05:54Z" finished-at="2017-09-24T19:05:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.assignment.makemytrip.MMTFlightBooking -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
